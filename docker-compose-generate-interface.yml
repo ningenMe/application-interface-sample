@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  proto:
+    command: /work/generate-interface/generate.sh
+    build:
+      context: ./generate-interface
+      dockerfile: Dockerfile
+    volumes:
+      - .:/work
