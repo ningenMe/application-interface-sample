@@ -1,13 +1,12 @@
 # application-interface-sample
 
 ### applications
-|    name             | port |
-|--------------       |----- |
-|client-go            | 9100 |
-|client-react         | 9101 |
-|server-grpc-go       | 9140 |
-|server-grpc-envoy-go | 9141 |
-|database-mysql       | 9190 |
+|    name                          | port | 
+|--------------                    |----- |
+|client-react                      | 9100 |
+|[server-grpc-go](./server-grpc-go)| 9140 |
+|server-grpc-envoy-go              | 9141 |                    
+|database-mysql                    | 9190 |                    
 
 portを 91xx にしてるのは、単にwell-known portがないところを選んでいるだけ
 

@@ -8,11 +8,12 @@ import (
     "net"
     interface_grpc "ningenme/application-interface-sample/server-grpc-go/interface-grpc"
     "ningenme/application-interface-sample/server-grpc-go/pkg"
+    "os"
 )
 
 //TODO 環境変数に切り替える
-const (
-    ServerGrpcGoPort = "9140"
+var (
+    ServerGrpcGoPort = os.Getenv("SERVER_GRPC_GO_PORT")
 )
 
 func main() {

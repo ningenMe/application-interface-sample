@@ -4,14 +4,15 @@ import (
     "fmt"
     _ "github.com/go-sql-driver/mysql"
     "github.com/jmoiron/sqlx"
+    "os"
 )
 
-const (
-    DatabaseMysqlUser = "root"
-    DatabaseMysqlPassword = "password"
-    DatabaseMysqlHost = "host.docker.internal"
-    DatabaseMysqlPort = "9190"
-    DatabaseMysqlSchema = "sample"
+var (
+    DatabaseMysqlUser = os.Getenv("DATABASE_MYSQL_USER")
+    DatabaseMysqlPassword = os.Getenv("DATABASE_MYSQL_PASSWORD")
+    DatabaseMysqlHost = os.Getenv("DATABASE_MYSQL_HOST")
+    DatabaseMysqlPort = os.Getenv("DATABASE_MYSQL_PORT")
+    DatabaseMysqlSchema = os.Getenv("DATABASE_MYSQL_SCHEMA")
 )
 
 func GetMysqlConfig() string {
