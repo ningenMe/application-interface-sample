@@ -1,13 +1,13 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Index.module.css'
 
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Application Interface Sample</title>
-        <meta name="description" content="application interface sample" />
+        <title>client-react</title>
+        <meta name="description" content="client-react" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -28,7 +28,7 @@ const Home: NextPage = () => {
         </p>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
+          <a href="/server-grpc-go" className={styles.card}>
             <h2>Interface: Grpc</h2>
             <h2>Language: Go &rarr;</h2>
           </a>
