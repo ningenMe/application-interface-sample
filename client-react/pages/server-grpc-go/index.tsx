@@ -11,8 +11,8 @@ const Index: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-          <p> TODO メッセージ送信ボックスを作る </p>
-          <p> TODO メッセージ参照表示を作る </p>
+        <p> TODO メッセージ送信ボックスを作る </p>
+        <p> TODO メッセージ参照表示を作る </p>
       </main>
     </div>
   )

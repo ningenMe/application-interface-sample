@@ -8,14 +8,14 @@
 |[server-grpc-envoy-go](./server-grpc-envoy-go)| 9141 |                    
 |database-mysql                                | 9190 |
 
-### generate command
-```shell
-docker-compose -f docker-compose-generate-interface.yml build --no-cache && docker-compose -f docker-compose-generate-interface.yml up 
-```
-
 ### application start
 ```shell
 docker-compose -f docker-compose-application.yml build --no-cache && docker-compose -f docker-compose-application.yml up
+```
+
+### generate command
+```shell
+docker-compose -f docker-compose-generate-interface.yml build --no-cache && docker-compose -f docker-compose-generate-interface.yml up 
 ```
 
 ### mysql login

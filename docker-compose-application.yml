@@ -1,9 +1,9 @@
 version: '3.8'
 services:
-  mysql:
+  database-mysql:
     platform: linux/x86_64
     image: mysql:8.0
-    container_name: mysql
+    container_name: database-mysql
     environment:
       MYSQL_DATABASE: tmp
       MYSQL_USER: user
@@ -16,6 +16,16 @@ services:
     ports:
       - "${DATABASE_MYSQL_PORT}:3306"
 
+  client-react:
+    env_file:
+      - .env
+    build:
+      context: ./client-react
+      dockerfile: Dockerfile
+    command: yarn start -p ${CLIENT_REACT_PORT}
+    ports:
+      - "${CLIENT_REACT_PORT}:${CLIENT_REACT_PORT}"
+
   server-grpc-go:
     env_file:
       - .env
@@ -24,6 +34,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "${SERVER_GRPC_GO_PORT}:${SERVER_GRPC_GO_PORT}"
+    depends_on:
+      - database-mysql
 
   server-grpc-envoy-go:
     env_file:
@@ -33,3 +45,5 @@ services:
       dockerfile: Dockerfile
     ports:
       - "${SERVER_GRPC_ENVOY_GO_PORT}:${SERVER_GRPC_ENVOY_GO_PORT}"
+    depends_on:
+      - database-mysql
