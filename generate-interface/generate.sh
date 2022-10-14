@@ -7,7 +7,7 @@ protoc \
 --go-grpc_out="${GO_OUT_PATH}" --go-grpc_opt=paths=source_relative \
 ./interface-grpc/*.proto
 
-TS_OUT_PATH="./client-react"
+TS_OUT_PATH="./client-react/src"
 protoc \
 --js_out="import_style=commonjs,binary:${TS_OUT_PATH}" \
 --grpc-web_out="import_style=typescript,mode=grpcwebtext:${TS_OUT_PATH}" \
