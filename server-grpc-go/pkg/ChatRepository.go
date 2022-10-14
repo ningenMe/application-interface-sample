@@ -33,13 +33,14 @@ func (c *ChatRepository) Insert(body string) {
 }
 
 type ChatDto struct {
+    ChatId    int64     `db:"chat_id"`
     Body      string    `db:"body"`
     CreatedAt time.Time `db:"created_at"`
 }
 
 
 func (c *ChatRepository) Select(startAt time.Time, endAt time.Time) []*interface_grpc.Chat {
-    rows, err := DatabaseMysql.Queryx(`SELECT body, created_at FROM chat WHERE ? <= created_at AND created_at < ? ORDER BY created_at ASC`,
+    rows, err := DatabaseMysql.Queryx(`SELECT chat_id, body, created_at FROM chat WHERE ? <= created_at AND created_at < ? ORDER BY created_at ASC`,
         startAt.Format(time.RFC3339), endAt.Format(time.RFC3339))
     if err != nil {
         fmt.Println(err)
@@ -51,6 +52,7 @@ func (c *ChatRepository) Select(startAt time.Time, endAt time.Time) []*interface
         dto := &ChatDto{}
         rows.StructScan(dto)
         list = append(list, &interface_grpc.Chat{
+            ChatId:    dto.ChatId,
             Body:      dto.Body,
             CreatedAt: dto.CreatedAt.Format(time.RFC3339),
         })

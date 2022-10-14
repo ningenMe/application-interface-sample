@@ -38,11 +38,10 @@ func (c *ChatController) Get(empty *empty.Empty, stream interface_grpc.ChatServi
         list := chatRepository.Select(lastTime, currentTime)
         lastTime = currentTime
 
-        fmt.Println(list)
-
         if len(list) == 0 {
             continue
         }
+
         if err := stream.Send(&interface_grpc.GetResponse{ChatList: list}); err != nil {
             return err
         }

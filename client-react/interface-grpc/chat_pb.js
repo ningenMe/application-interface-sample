@@ -402,8 +402,9 @@ proto.sample.Chat.prototype.toObject = function(opt_includeInstance) {
  */
 proto.sample.Chat.toObject = function(includeInstance, msg) {
   var f, obj = {
-    body: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    createdat: jspb.Message.getFieldWithDefault(msg, 2, "")
+    chatid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    body: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    createdat: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -441,10 +442,14 @@ proto.sample.Chat.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setChatid(value);
+      break;
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setBody(value);
       break;
-    case 2:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setCreatedat(value);
       break;
@@ -477,46 +482,53 @@ proto.sample.Chat.prototype.serializeBinary = function() {
  */
 proto.sample.Chat.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getBody();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getChatid();
+  if (f !== 0) {
+    writer.writeInt64(
       1,
       f
     );
   }
-  f = message.getCreatedat();
+  f = message.getBody();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
+  f = message.getCreatedat();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
 };
 
 
 /**
- * optional string body = 1;
+ * optional int64 chatId = 1;
+ * @return {number}
+ */
+proto.sample.Chat.prototype.getChatid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.sample.Chat} returns this
+ */
+proto.sample.Chat.prototype.setChatid = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional string body = 2;
  * @return {string}
  */
 proto.sample.Chat.prototype.getBody = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.sample.Chat} returns this
- */
-proto.sample.Chat.prototype.setBody = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string createdAt = 2;
- * @return {string}
- */
-proto.sample.Chat.prototype.getCreatedat = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -525,8 +537,26 @@ proto.sample.Chat.prototype.getCreatedat = function() {
  * @param {string} value
  * @return {!proto.sample.Chat} returns this
  */
-proto.sample.Chat.prototype.setCreatedat = function(value) {
+proto.sample.Chat.prototype.setBody = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string createdAt = 3;
+ * @return {string}
+ */
+proto.sample.Chat.prototype.getCreatedat = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.sample.Chat} returns this
+ */
+proto.sample.Chat.prototype.setCreatedat = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

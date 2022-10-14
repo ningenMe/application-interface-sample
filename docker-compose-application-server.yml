@@ -16,16 +16,6 @@ services:
     ports:
       - "${DATABASE_MYSQL_PORT}:3306"
 
-  client-react:
-    env_file:
-      - .env
-    build:
-      context: ./client-react
-      dockerfile: Dockerfile
-    command: yarn start -p ${CLIENT_REACT_PORT}
-    ports:
-      - "${CLIENT_REACT_PORT}:${CLIENT_REACT_PORT}"
-
   server-grpc-go:
     env_file:
       - .env

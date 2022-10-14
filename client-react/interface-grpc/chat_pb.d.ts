@@ -42,6 +42,9 @@ export namespace GetResponse {
 }
 
 export class Chat extends jspb.Message {
+  getChatid(): number;
+  setChatid(value: number): Chat;
+
   getBody(): string;
   setBody(value: string): Chat;
 
@@ -58,6 +61,7 @@ export class Chat extends jspb.Message {
 
 export namespace Chat {
   export type AsObject = {
+    chatid: number,
     body: string,
     createdat: string,
   }

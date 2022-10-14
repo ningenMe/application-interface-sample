@@ -8,9 +8,14 @@
 |[server-grpc-envoy-go](./server-grpc-envoy-go)| 9141 |                    
 |database-mysql                                | 9190 |
 
-### application start
+### client start
 ```shell
-docker-compose -f docker-compose-application.yml build --no-cache && docker-compose -f docker-compose-application.yml up
+docker-compose -f docker-compose-application-client.yml build --no-cache && docker-compose -f docker-compose-application-client.yml up
+```
+
+### server start
+```shell
+docker-compose -f docker-compose-application-server.yml build --no-cache && docker-compose -f docker-compose-application-server.yml up
 ```
 
 ### generate command

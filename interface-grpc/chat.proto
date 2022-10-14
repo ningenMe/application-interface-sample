@@ -17,6 +17,7 @@ message GetResponse {
   repeated Chat chatList = 1;
 }
 message Chat {
-  string body = 1;
-  string createdAt = 2;
+  int64 chatId = 1;
+  string body = 2;
+  string createdAt = 3;
 }
