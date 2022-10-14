@@ -30,6 +30,11 @@ func (c *ChatController) Get(empty *empty.Empty, stream interface_grpc.ChatServi
     ms, _ := strconv.Atoi(PollingMilliSecond)
 
     for {
+        if err := stream.Context().Err(); err != nil {
+            fmt.Println(err)
+            return nil
+        }
+
         currentTime := time.Now()
 
         time.Sleep(time.Millisecond * time.Duration(ms))

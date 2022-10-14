@@ -11,7 +11,6 @@ import (
     "os"
 )
 
-//TODO 環境変数に切り替える
 var (
     ServerGrpcGoPort = os.Getenv("SERVER_GRPC_GO_PORT")
 )
