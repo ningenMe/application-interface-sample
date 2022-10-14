@@ -1,5 +1,5 @@
 .main {
-  min-height: 100vh;
+  min-height: 50vh;
   padding: 2rem 0;
   flex: 1;
   display: flex;
@@ -8,11 +8,20 @@
   align-items: center;
 }
 .chatWindow {
-  background-color: white;
+  background-color: #9af0ff;
   padding: 0.1em 0.01em;
   height: 100%;
   width: 100%;
+  border: 1px solid #eaeaea;
+  border-radius: 1em;
 }
-.chatWindow p {
+.chatMessage {
+  background-color: white;
+  padding: 0.1em 1em;
+  margin: 1em 1em;
+  border: 1px solid #eaeaea;
+  border-radius: 20em;
+}
+.chatMessage p {
   color: #111111;
 }

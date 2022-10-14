@@ -2,54 +2,41 @@ import type {GetServerSideProps, NextPage} from 'next'
 import Head from 'next/head'
 import styles from 'styles/Chat.module.css'
 import commonStyles from 'styles/Common.module.css'
-import {ChatServiceClient} from "interface-grpc/ChatServiceClientPb";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import { Empty } from 'google-protobuf/google/protobuf/empty_pb'
 import {Chat} from "interface-grpc/chat_pb";
+import {serverGrpcGoClient} from "../../repository/server";
+import {useDidUpdateEffect} from "../../hooks/useDidUpdateEffect";
 
-type ServerConfig ={
-  host: string
-  port: string
-}
-const getHostName = (serverConfig: ServerConfig) => {
-  return serverConfig.host + ":" + serverConfig.port;
-}
+const Index: NextPage = () => {
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  return {
-    props: {
-      host: process.env.SERVER_HOST!!,
-      port: process.env.SERVER_GRPC_ENVOY_GO_PORT!!
-    }
-  }
-};
+  const [chatList, setChatList] = useState<ReadonlyArray<Chat>>([]);
 
-const Index: NextPage<ServerConfig> = (props: ServerConfig) => {
-
-  const [chatList, setChatList] = useState<Chat[]>([]);
-
-  const client = new ChatServiceClient(getHostName(props))
-
-  useEffect(
-    () => {
-      const stream = client.get(new Empty());
+  useDidUpdateEffect(() => {
+      const stream = serverGrpcGoClient.get(new Empty());
       stream.on("data", response => {
-        const list = response.getChatlistList();
-        console.log(list)
+        const fetchedList = response.getChatlistList();
 
-        //新しいデータがないならreturn
-        if (!list.length) {
-          return;
-        }
-        setChatList([...chatList, ...list])
+        setChatList(chatList =>
+          Array
+            .from(
+              new Map(
+                [...chatList,...fetchedList].map(chat => [chat.getChatid(), chat])
+              ).values())
+            .sort((l,r)=> r.getChatid() - l.getChatid())
+            .slice(0,5)
+            .sort((l,r)=> l.getChatid() - r.getChatid())
+        )
       })
-    },
-    [client]
+    }, [serverGrpcGoClient]
   )
 
-  const chatNodeList = chatList.map(chat => {
+  const chatListNode = chatList.map(chat => {
     return (
-      <p> {chat.getChatid()} : {chat.getCreatedat()} : {chat.getBody()} </p>
+      <div className={styles.chatMessage} key={chat.getChatid()}>
+        <p> {chat.getChatid()} : {chat.getCreatedat()} : {chat.getBody()} </p>
+      </div>
+
     );
   })
 
@@ -63,8 +50,7 @@ const Index: NextPage<ServerConfig> = (props: ServerConfig) => {
       <div className={commonStyles.container}>
         <main className={styles.main}>
           <div className={styles.chatWindow} >
-            <p> TODO メッセージ送信ボックスを作る </p>
-            {chatNodeList}
+            {chatListNode}
           </div>
         </main>
       </div>
