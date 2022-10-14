@@ -17,7 +17,7 @@ const Home: NextPage = () => {
           <h2>
             Application Interface Sample
           </h2>
-          <h1 className={styles.title}>
+          <h1 className={commonStyles.title}>
             client-react
           </h1>
 
@@ -34,20 +34,10 @@ const Home: NextPage = () => {
               <h2>Language: Go &rarr;</h2>
             </a>
 
-            <a href="https://nextjs.org/learn" className={styles.card}>
-              <h2>Interface: Websocket</h2>
-              <h2>Language: Kotlin &rarr;</h2>
-            </a>
-
-            <a href="https://nextjs.org/learn" className={styles.card}>
-              <h2>Interface: Openapi</h2>
-              <h2>Language: Rust &rarr;</h2>
-            </a>
-
-            <a href="https://nextjs.org/learn" className={styles.card}>
-              <h2>Interface: Graphql</h2>
-              <h2>Language: Kotlin &rarr;</h2>
-            </a>
+            {/*<a href="https://nextjs.org/learn" className={styles.card}>*/}
+            {/*  <h2>Interface: Openapi</h2>*/}
+            {/*  <h2>Language: Go &rarr;</h2>*/}
+            {/*</a>*/}
 
           </div>
         </main>

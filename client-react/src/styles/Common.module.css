@@ -4,3 +4,9 @@
   justify-content: center;
   padding: 2em 5em;
 }
+.title {
+  margin: 0.2em;
+  line-height: 1.15;
+  font-size: 4rem;
+  text-align: center;
+}
