@@ -3,9 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p ${AIS_CLIENT_REACT_PORT}",
-    "build": "next build",
-    "start": "next start",
+    "dev":  "set | grep AIS | grep -v ZLE | grep -v NEXT_PUBLIC | awk '{print \"NEXT_PUBLIC_\"$1}' > .env && next dev -p ${AIS_CLIENT_REACT_PORT}",
     "lint": "next lint"
   },
   "dependencies": {

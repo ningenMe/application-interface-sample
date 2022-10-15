@@ -6,6 +6,6 @@ services:
     build:
       context: ./client-react
       dockerfile: Dockerfile
-    command: yarn start -p ${AIS_CLIENT_REACT_PORT}
+    command: yarn dev
     ports:
       - "${AIS_CLIENT_REACT_PORT}:${AIS_CLIENT_REACT_PORT}"
