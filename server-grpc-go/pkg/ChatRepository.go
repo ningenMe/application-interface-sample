@@ -10,11 +10,11 @@ import (
 )
 
 var (
-    DatabaseMysqlUser = os.Getenv("DATABASE_MYSQL_USER")
-    DatabaseMysqlPassword = os.Getenv("DATABASE_MYSQL_PASSWORD")
-    DatabaseMysqlHost = os.Getenv("DATABASE_MYSQL_HOST")
-    DatabaseMysqlPort = os.Getenv("DATABASE_MYSQL_PORT")
-    DatabaseMysqlSchema = os.Getenv("DATABASE_MYSQL_SCHEMA")
+    DatabaseMysqlUser = os.Getenv("AIS_DATABASE_MYSQL_USER")
+    DatabaseMysqlPassword = os.Getenv("AIS_DATABASE_MYSQL_PASSWORD")
+    DatabaseMysqlHost = os.Getenv("AIS_DATABASE_MYSQL_HOST")
+    DatabaseMysqlPort = os.Getenv("AIS_DATABASE_MYSQL_PORT")
+    DatabaseMysqlSchema = os.Getenv("AIS_DATABASE_MYSQL_SCHEMA")
 )
 
 func GetMysqlConfig() string {

@@ -12,7 +12,7 @@ import (
 )
 
 var (
-    ServerGrpcGoPort = os.Getenv("SERVER_GRPC_GO_PORT")
+    ServerGrpcGoPort = os.Getenv("AIS_SERVER_GRPC_GO_PORT")
 )
 
 func main() {

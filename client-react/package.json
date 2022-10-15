@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p ${CLIENT_REACT_PORT}",
+    "dev": "next dev -p ${AIS_CLIENT_REACT_PORT}",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

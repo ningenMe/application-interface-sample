@@ -3,7 +3,7 @@
 ### applications
 |    name                                      | port | 
 |--------------                                |----- |
-|client-react                                  | 9100 |
+|[client-react](./client-react)                | 9100 |
 |[server-grpc-go](./server-grpc-go)            | 9140 |
 |[server-grpc-envoy-go](./server-grpc-envoy-go)| 9141 |                    
 |database-mysql                                | 9190 |

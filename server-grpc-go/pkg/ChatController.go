@@ -16,7 +16,7 @@ type ChatController struct {
 
 var chatRepository = ChatRepository{}
 
-var PollingMilliSecond = os.Getenv("POLLING_MILLISECOND")
+var PollingMilliSecond = os.Getenv("AIS_POLLING_MILLISECOND")
 
 func (c *ChatController) Post(ctx context.Context, req *interface_grpc.PostRequest) (*empty.Empty, error) {
 
