@@ -7,3 +7,10 @@ services:
       dockerfile: Dockerfile
     volumes:
       - .:/work
+  interface-grpc-environment-java:
+    command: /work/interface-grpc/environment-java/generate.sh
+    build:
+      context: ./interface-grpc/environment-java
+      dockerfile: Dockerfile
+    volumes:
+      - .:/work
