@@ -1,9 +1,9 @@
 version: '3.8'
 services:
-  proto:
-    command: /work/generate-interface/generate.sh
+  interface-grpc-environment-go:
+    command: /work/interface-grpc/environment-go/generate.sh
     build:
-      context: ./generate-interface
+      context: ./interface-grpc/environment-go
       dockerfile: Dockerfile
     volumes:
       - .:/work
