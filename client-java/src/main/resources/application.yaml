@@ -1,0 +1,2 @@
+server:
+  port: ${AIS_CLIENT_JAVA_PORT}
