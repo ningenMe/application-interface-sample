@@ -34,7 +34,7 @@ protobuf {
             grpc {}
         }
     }
-    generatedFilesBaseDir = "$projectDir/../generated"
+    generatedFilesBaseDir = "$projectDir/generated"
 }
 
 dependencies {
