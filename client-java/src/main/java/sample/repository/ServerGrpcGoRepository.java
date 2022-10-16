@@ -16,14 +16,12 @@ import java.util.Iterator;
 @Repository
 public class ServerGrpcGoRepository {
 
-    private final ClientJavaConfig clientJavaConfig;
     private final ChatServiceGrpc.ChatServiceBlockingStub chatServiceBlockingStub;
 
     public ServerGrpcGoRepository(ClientJavaConfig clientJavaConfig) {
-        this.clientJavaConfig = clientJavaConfig;
         this.chatServiceBlockingStub = ChatServiceGrpc.newBlockingStub(
             ManagedChannelBuilder
-                .forAddress("127.0.0.1", clientJavaConfig.getAisServerGrpcGoPort())
+                .forAddress(clientJavaConfig.getAisServerHost(), clientJavaConfig.getAisServerGrpcGoPort())
                 .usePlaintext()
                 .build()
         );
