@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.7.4'
 	id 'io.spring.dependency-management' version '1.0.14.RELEASE'
 	id 'java'
+    id "com.google.protobuf" version "0.9.1"
 }
 
 group = 'sample'
@@ -14,7 +15,14 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    runtimeOnly 'io.grpc:grpc-netty-shaded:1.50.0'
+    implementation 'io.grpc:grpc-protobuf:1.50.0'
+    implementation 'io.grpc:grpc-stub:1.50.0'
+    compileOnly 'org.apache.tomcat:annotations-api:6.0.53'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 tasks.named('test') {
