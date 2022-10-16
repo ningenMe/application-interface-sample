@@ -10,12 +10,12 @@ services:
     ports:
       - "${AIS_CLIENT_REACT_PORT}:${AIS_CLIENT_REACT_PORT}"
 
-  client-java:
-    env_file:
-      - .env
-    build:
-      context: ./client-java
-      dockerfile: Dockerfile
-    command: gradle clean bootRun
-    ports:
-      - "${AIS_CLIENT_JAVA_PORT}:${AIS_CLIENT_JAVA_PORT}"
+  # client-java:
+  #   env_file:
+  #     - .env
+  #   build:
+  #     context: ./client-java
+  #     dockerfile: Dockerfile
+  #   command: gradle clean build && gradle bootRun
+  #   ports:
+  #     - "${AIS_CLIENT_JAVA_PORT}:${AIS_CLIENT_JAVA_PORT}"
