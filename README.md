@@ -9,6 +9,8 @@
 |[server-grpc-envoy-go](./server-grpc-envoy-go)| 9141 | server   |
 |[database-mysql](./database-mysql)            | 9190 | database |
 
+![archtecture](./archtecture.drawio.png)
+
 ### client start
 ```shell
 docker-compose -f docker-compose-application-client.yml build --no-cache --progress plain && docker-compose -f docker-compose-application-client.yml up
