@@ -6,6 +6,10 @@ package sample;
 
 option go_package = "github.com/ningenme/application-interface-sample/server-grpc-go/interface-grpc";
 
+option java_multiple_files = true;
+option java_package = "sample.generated";
+option java_outer_classname = "ChatProto";
+
 service ChatService {
   rpc Post (PostRequest) returns (google.protobuf.Empty) {}
   rpc Get (google.protobuf.Empty) returns (stream GetResponse) {}
