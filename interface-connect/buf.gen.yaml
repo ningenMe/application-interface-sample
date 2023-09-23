@@ -1,0 +1,16 @@
+version: v1
+plugins:
+  - plugin: go
+    out: gen_go
+    opt: paths=source_relative
+  - plugin: connect-go
+    out: gen_go
+    opt: paths=source_relative
+  - plugin: es
+    opt: target=ts
+    out: gen_ts
+  - plugin: connect-es
+    opt:
+      - target=ts
+      - import_extension=.ts
+    out: gen_ts

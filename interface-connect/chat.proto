@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package sample;
+
+option go_package = "github.com/ningenme/application-interface-sample/server-go-connect/interface-connect";
+
+option java_multiple_files = true;
+option java_package = "sample.generated";
+option java_outer_classname = "ChatProto";
+
+service ChatService {
+  rpc Post (PostRequest) returns (google.protobuf.Empty) {}
+  rpc Get (google.protobuf.Empty) returns (stream GetResponse) {}
+}
+message PostRequest {
+  string body = 1;
+}
+message GetResponse {
+  repeated Chat chatList = 1;
+}
+message Chat {
+  int64 chatId = 1;
+  string body = 2;
+  string createdAt = 3;
+}
