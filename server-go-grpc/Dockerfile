@@ -6,6 +6,6 @@ COPY . ./
 
 RUN go mod download
 
-RUN go build -o /server-grpc-go
+RUN go build -o /server-go-grpc
 
-CMD ["/server-grpc-go"]
+CMD ["/server-go-grpc"]

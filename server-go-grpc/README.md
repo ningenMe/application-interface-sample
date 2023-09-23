@@ -1,4 +1,4 @@
-# server-grpc-go
+# server-go-grpc
 
 ```shell
 grpcurl -plaintext localhost:${AIS_SERVER_GRPC_GO_PORT} list

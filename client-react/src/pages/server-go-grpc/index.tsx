@@ -22,14 +22,14 @@ const Index: NextPage = () => {
   return (
     <>
       <Head>
-        <title>server-grpc-go - client-react</title>
+        <title>server-go-grpc - client-react</title>
         <meta name="description" content="client-react" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={commonStyles.container}>
         <main className={styles.main}>
           <h1 className={commonStyles.title}>
-            server-grpc-go
+            server-go-grpc
           </h1>
           <div className={styles.chatWindow} >
             {chatListNode}

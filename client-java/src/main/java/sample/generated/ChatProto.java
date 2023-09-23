@@ -48,7 +48,7 @@ public final class ChatProto {
       "pty\032\023.sample.GetResponse\"\0000\001Bo\n\020sample.g" +
       "eneratedB\tChatProtoP\001ZNgithub.com/ningen" +
       "me/application-interface-sample/server-g" +
-      "rpc-go/interface-grpcb\006proto3"
+      "o-grpc/interface-grpcb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -2,4 +2,4 @@ server:
   port: ${AIS_CLIENT_JAVA_PORT}
 client-java:
   ais-server-host: ${AIS_SERVER_HOST}
-  ais-server-grpc-go-port: ${AIS_SERVER_GRPC_GO_PORT}
+  ais-server-go-grpc-port: ${AIS_SERVER_GO_GRPC_PORT}

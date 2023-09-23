@@ -4,7 +4,7 @@ import (
     "fmt"
     _ "github.com/go-sql-driver/mysql"
     "github.com/jmoiron/sqlx"
-    interface_grpc "ningenme/application-interface-sample/server-grpc-go/interface-grpc"
+    interface_grpc "ningenme/application-interface-sample/server-go-grpc/interface-grpc"
     "os"
     "time"
 )

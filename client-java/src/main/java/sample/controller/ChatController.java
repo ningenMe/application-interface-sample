@@ -13,13 +13,13 @@ public class ChatController {
 
     private final ServerGrpcGoRepository serverGrpcGoRepository;
 
-    @GetMapping("server-grpc-go/get")
+    @GetMapping("server-go-grpc/get")
     public ResponseEntity<String> serverGrpcGoGet() {
         serverGrpcGoRepository.get();
         return ResponseEntity.ok("ok");
     }
 
-    @GetMapping("server-grpc-go/post")
+    @GetMapping("server-go-grpc/post")
     public ResponseEntity<String> serverGrpcGoPost(
         @RequestParam String body
     ) {

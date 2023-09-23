@@ -1,4 +1,4 @@
-module ningenme/application-interface-sample/server-grpc-go
+module ningenme/application-interface-sample/server-go-grpc
 
 go 1.19
 

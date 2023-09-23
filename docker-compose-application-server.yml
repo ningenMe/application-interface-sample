@@ -16,24 +16,24 @@ services:
     ports:
       - "${AIS_DATABASE_MYSQL_PORT}:3306"
 
-  server-grpc-go:
+  server-go-grpc:
     env_file:
       - .env
     build:
-      context: ./server-grpc-go
+      context: ./server-go-grpc
       dockerfile: Dockerfile
     ports:
-      - "${AIS_SERVER_GRPC_GO_PORT}:${AIS_SERVER_GRPC_GO_PORT}"
+      - "${AIS_SERVER_GO_GRPC_PORT}:${AIS_SERVER_GO_GRPC_PORT}"
     depends_on:
       - database-mysql
 
-  server-grpc-envoy-go:
+  server-go-grpc-envoy:
     env_file:
       - .env
     build:
-      context: ./server-grpc-envoy-go
+      context: ./server-go-grpc-envoy
       dockerfile: Dockerfile
     ports:
-      - "${AIS_SERVER_GRPC_ENVOY_GO_PORT}:${AIS_SERVER_GRPC_ENVOY_GO_PORT}"
+      - "${AIS_SERVER_GO_GRPC_ENVOY_PORT}:${AIS_SERVER_GO_GRPC_ENVOY_PORT}"
     depends_on:
       - database-mysql

@@ -5,14 +5,14 @@
 |--------------                                |----- | ----     |
 |[client-react](./client-react)                | 9100 | client   |
 |[client-java](./client-java)                  | 9101 | client   |
-|[server-grpc-go](./server-grpc-go)            | 9140 | server   |
-|[server-grpc-envoy-go](./server-grpc-envoy-go)| 9141 | server   |
+|[server-go-grpc](./server-go-grpc)            | 9140 | server   |
+|[server-go-grpc-envoy](./server-go-grpc-envoy)| 9141 | server   |
 |[database-mysql](./database-mysql)            | 9190 | database |
 
 ### server-roadmap
 |  language  | grpc | connect | websocket | graphql | openapi(rest) | quic |
 |--          | --- | ----    |        -- | --      | --            | --   |
-| go         | [server-grpc-go](./server-grpc-go) | TODO    | TODO | TODO | TODO            | TODO   |
+| go         | [server-go-grpc](./server-go-grpc) | TODO    | TODO | TODO | TODO            | TODO   |
 | java         | TODO | TODO    | TODO | TODO | TODO            | TODO   |
 | kotlin         | TODO | TODO    | TODO | TODO | TODO            | TODO   |
 | rust         | TODO | TODO    | TODO | TODO | TODO            | TODO   |
@@ -28,10 +28,10 @@ flowchart LR
         java([java])
     end
     subgraph server
-        subgraph grpc-go-and-envoy
-            grpc-go-envoy[[grpc-go-envoy]]
-            grpc-go[[grpc-go]]
-            grpc-go-envoy <--> grpc-go
+        subgraph go-grpc-and-envoy
+            go-grpc-envoy[[go-grpc-envoy]]
+            go-grpc[[go-grpc]]
+            go-grpc-envoy <--> go-grpc
         end
         connect-go[[connect-go: TODO]]
         websocket-go[[websocket-go: TODO]]
@@ -40,12 +40,12 @@ flowchart LR
         mysql[(mysql)]
     end
 
-    react <--> grpc-go-envoy
-    java  <--> grpc-go
+    react <--> go-grpc-envoy
+    java  <--> go-grpc
     react & java <--> connect-go 
     react & java <--> websocket-go
 
-    grpc-go & connect-go & websocket-go <--> mysql
+    go-grpc & connect-go & websocket-go <--> mysql
 ```
 
 ### client start

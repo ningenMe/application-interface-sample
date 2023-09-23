@@ -6,13 +6,13 @@ import (
     "google.golang.org/grpc/reflection"
     "log"
     "net"
-    interface_grpc "ningenme/application-interface-sample/server-grpc-go/interface-grpc"
-    "ningenme/application-interface-sample/server-grpc-go/pkg"
+    interface_grpc "ningenme/application-interface-sample/server-go-grpc/interface-grpc"
+    "ningenme/application-interface-sample/server-go-grpc/pkg"
     "os"
 )
 
 var (
-    ServerGrpcGoPort = os.Getenv("AIS_SERVER_GRPC_GO_PORT")
+    ServerGrpcGoPort = os.Getenv("AIS_SERVER_GO_GRPC_PORT")
 )
 
 func main() {

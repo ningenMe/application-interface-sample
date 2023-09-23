@@ -29,7 +29,7 @@ const Home: NextPage = () => {
           </p>
 
           <div className={styles.grid}>
-            <a href="/server-grpc-go" className={styles.card}>
+            <a href="/server-go-grpc" className={styles.card}>
               <h2>Interface: Grpc</h2>
               <h2>Language: Go &rarr;</h2>
             </a>

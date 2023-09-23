@@ -4,7 +4,7 @@ import "google/protobuf/empty.proto";
 
 package sample;
 
-option go_package = "github.com/ningenme/application-interface-sample/server-grpc-go/interface-grpc";
+option go_package = "github.com/ningenme/application-interface-sample/server-go-grpc/interface-grpc";
 
 option java_multiple_files = true;
 option java_package = "sample.generated";

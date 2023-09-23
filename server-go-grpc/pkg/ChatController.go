@@ -4,7 +4,7 @@ import (
     "context"
     "fmt"
     "github.com/golang/protobuf/ptypes/empty"
-    interface_grpc "ningenme/application-interface-sample/server-grpc-go/interface-grpc"
+    interface_grpc "ningenme/application-interface-sample/server-go-grpc/interface-grpc"
     "os"
     "strconv"
     "time"

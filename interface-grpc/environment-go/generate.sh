@@ -1,7 +1,7 @@
 #!/bin/sh
 protoc --version
 
-GO_OUT_PATH="./server-grpc-go"
+GO_OUT_PATH="./server-go-grpc"
 protoc \
 --go_out="${GO_OUT_PATH}" --go_opt=paths=source_relative \
 --go-grpc_out="${GO_OUT_PATH}" --go-grpc_opt=paths=source_relative \
